@@ -1,0 +1,53 @@
+<div class="container py-5 px-lg-5" 
+style="margin-top: 3rem;">
+  <form>
+    <div class="mb-3">
+        <label for="exampleInputTitle" 
+        class="form-label">Title</label>
+        <input type="text" 
+        class="form-control" id="exampleInputTitle"
+         name="title"
+         aria-describedby="Title"
+          [(ngModel)] = "todosOBJ.title">
+      </div>
+    <div class="mb-3 form-check">
+      <input type="checkbox" 
+      class="form-check-input" 
+      id="exampleCheckCompleted" 
+      name="completed"
+      [(ngModel)] = "todosOBJ.completed">
+      <label class="form-check-label" 
+      for="exampleCheck1">Completed</label>
+    </div>
+    <button type="submit" class="btn btn-primary" 
+    (click) = "updateTodos()">
+        Atualizar
+    </button>
+    <button type="submit" class="btn btn-primary"
+     (click) = "cancel()" style="margin-left: 1rem;">
+        Cancelar Operação
+    </button>
+
+    <button class="btn btn-primary" (click)="open(mymodal)" style="margin-left: 1rem;">
+      Apagar
+    </button>
+
+  </form>
+
+</div>
+
+<ng-template #mymodal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Deseja apagar a tafera ({{todosOBJ.title}})?</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+  <div class="modal-body">
+   Tarefa a apagar: ({{todosOBJ.title}})
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-lg btn-outline-primary" 
+    (click)="modal.close('Save click')">Sim</button>
+  </div>
+</ng-template>

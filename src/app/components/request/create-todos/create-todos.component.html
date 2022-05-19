@@ -1,0 +1,41 @@
+
+<div class="container py-5 px-lg-5" 
+style="margin-top: 3rem;">
+  <form>
+    <div class="mb-3">
+        <label for="exampleInputTitle" 
+        class="form-label">Title</label>
+        <input type="text" 
+        class="form-control" id="exampleInputTitle"
+         name="title"
+         aria-describedby="Title"
+          [(ngModel)] = "todosOBJ.title">
+      </div>
+    <div class="mb-3 form-check">
+      <input type="checkbox" 
+      class="form-check-input" 
+      id="exampleCheckCompleted" 
+      name="completed"
+      [(ngModel)] = "todosOBJ.completed">
+      <label class="form-check-label" 
+      for="exampleCheck1">Completed</label>
+    </div>
+    <button type="submit" class="btn btn-primary" 
+    (click) = "createTodos()">
+        Guardar
+    </button>
+    <button type="submit" class="btn btn-primary"
+     (click) = "cancel()" style="margin-left: 1rem;">
+        Cancelar Operação
+    </button>
+
+  
+
+  </form>
+
+
+
+  
+    
+</div>
+

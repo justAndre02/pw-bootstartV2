@@ -1,0 +1,46 @@
+<div class="container px-4 px-lg-5">
+
+  <button type="submit" class="btn btn-primary" 
+  style="margin-top: 6rem"
+  (click) = "Goto()">
+      Create new todo
+  </button>
+    
+  <table class="table" style="margin-top: 6rem;">
+        <thead>
+          <tr>
+            <th scope="col">#id</th>
+            <th scope="col">userId</th>
+            <th scope="col">title</th>
+            <th scope="col">completed</th>
+            <th scope="col">Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+    
+          <tr *ngFor="let todos of todos">
+            <th scope="row">{{ todos.id }}</th>
+            <td>{{ todos.userId }}</td>
+            <td>{{ todos.title }}</td>
+            <td>{{ todos.completed }}</td>
+            <td>
+              <a routerLink="/todos/update/{{todos.id}}" 
+              class="edit">
+                <i class="bi bi-pencil"></i>
+              </a>
+
+
+
+
+
+
+              <!-- <a routerLink="/todos/update/{{todos.id}}" class="edit">
+                <i class="bi bi-save-fill"></i>
+              </a> -->
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+</div>
+
